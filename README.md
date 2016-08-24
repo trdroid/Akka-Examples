@@ -550,6 +550,134 @@ Other Tutorial Templates:
   widok-skeleton
 ```
 
+```sh
+$ activator new
+
+Fetching the latest list of templates...
+
+[WARN] [08/24/2016 09:47:04.848] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Failed to download new template catalog properties: java.lang.IllegalArgumentException: requirement failed: Sou                 rce file 'C:\Users\droid\.activator\1.3.10\templates\index.db_f3632f9c0dfb72e7.tmp' is a directory.
+[INFO] [08/24/2016 09:47:04.851] [default-akka.actor.default-dispatcher-2] [akka://default/user/template-cache] We have index hash 8a2285c306189290715965bc7fae4399d0d5c882 but haven't downloaded that index - a                 ttempting to download it now.
+[ERROR] [08/24/2016 09:47:04.987] [default-akka.actor.default-dispatcher-2] [akka://default/user/template-cache] Could not find a template catalog. (java.lang.IllegalArgumentException: requirement failed: Sour                 ce file 'C:\Users\droid\.activator\1.3.10\templates\index.db_c5dbaeaf1974397f.tmp' is a directory.
+java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_c5dbaeaf1974397f.tmp' is a directory.
+        at scala.Predef$.require(Predef.scala:224)
+        at sbt.IO$.copyFile(IO.scala:637)
+        at sbt.IO$.move(IO.scala:839)
+        at activator.package$RichIO$.createViaTemporary$extension(package.scala:30)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:228)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:220)
+        at sbt.IO$.withTemporaryDirectory(IO.scala:344)
+        at activator.templates.repository.UriRemoteTemplateRepository.resolveIndexTo(UriRemoteTemplateRepository.scala:220)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:165)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:163)
+        at scala.Option.foreach(Option.scala:257)
+        at activator.cache.TemplateCacheActor.preStart(TemplateCacheActor.scala:163)
+        at akka.actor.Actor$class.aroundPreStart(Actor.scala:470)
+        at activator.cache.TemplateCacheActor.aroundPreStart(TemplateCacheActor.scala:25)
+        at akka.actor.ActorCell.create(ActorCell.scala:580)
+        at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+        at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+        at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_c5dbaeaf1974397f.tmp' is a directory.
+        at scala.Predef$.require(Predef.scala:224)
+        at sbt.IO$.copyFile(IO.scala:637)
+        at sbt.IO$.move(IO.scala:839)
+        at activator.package$RichIO$.createViaTemporary$extension(package.scala:30)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:228)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:220)
+        at sbt.IO$.withTemporaryDirectory(IO.scala:344)
+        at activator.templates.repository.UriRemoteTemplateRepository.resolveIndexTo(UriRemoteTemplateRepository.scala:220)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:165)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:163)
+        at scala.Option.foreach(Option.scala:257)
+        at activator.cache.TemplateCacheActor.preStart(TemplateCacheActor.scala:163)
+        at akka.actor.Actor$class.aroundPreStart(Actor.scala:470)
+        at activator.cache.TemplateCacheActor.aroundPreStart(TemplateCacheActor.scala:25)
+        at akka.actor.ActorCell.create(ActorCell.scala:580)
+        at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+        at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+        at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+```
+
+```sh
+$ activator -Dakka.loglevel=DEBUG new
+[DEBUG] [08/24/2016 09:49:48.469] [main] [EventStream(akka://default)] logger log1-Logging$DefaultLogger started
+[DEBUG] [08/24/2016 09:49:48.470] [main] [EventStream(akka://default)] Default Loggers started
+
+Fetching the latest list of templates...
+
+[DEBUG] [08/24/2016 09:49:48.616] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Downloading S3 bucket http://downloads.typesafe.com/typesafe-activator/index/v2/current.properties underneath base http://downloads.typesafe.com/typesafe-activator
+[DEBUG] [08/24/2016 09:49:50.063] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Found a new template catalog with hash 85751e15188f2bcec805beed86e67c9683780998 (we had 8a2285c306189290715965bc7fae4399d0d5c882 before)
+[DEBUG] [08/24/2016 09:49:50.066] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Downloading url http://downloads.typesafe.com/typesafe-activator/index/v2/index-85751e15188f2bcec805beed86e67c9683780998.zip underneath base http://downloads.typesafe.com/typesafe-activator
+[WARN] [08/24/2016 09:49:50.429] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Failed to download new template catalog properties: java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_79956b572094aee.tmp' is a directory.
+[INFO] [08/24/2016 09:49:50.431] [default-akka.actor.default-dispatcher-2] [akka://default/user/template-cache] We have index hash 8a2285c306189290715965bc7fae4399d0d5c882 but haven't downloaded that index - attempting to download it now.
+[DEBUG] [08/24/2016 09:49:50.432] [default-akka.actor.default-dispatcher-2] [ActorSystem(default)] Downloading url http://downloads.typesafe.com/typesafe-activator/index/v2/index-8a2285c306189290715965bc7fae4399d0d5c882.zip underneath base http://downloads.typesafe.com/typesafe-activator
+[ERROR] [08/24/2016 09:49:50.596] [default-akka.actor.default-dispatcher-2] [akka://default/user/template-cache] Could not find a template catalog. (java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_d39687bf9903f21.tmp' is a directory.
+java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_d39687bf9903f21.tmp' is a directory.
+        at scala.Predef$.require(Predef.scala:224)
+        at sbt.IO$.copyFile(IO.scala:637)
+        at sbt.IO$.move(IO.scala:839)
+        at activator.package$RichIO$.createViaTemporary$extension(package.scala:30)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:228)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:220)
+        at sbt.IO$.withTemporaryDirectory(IO.scala:344)
+        at activator.templates.repository.UriRemoteTemplateRepository.resolveIndexTo(UriRemoteTemplateRepository.scala:220)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:165)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:163)
+        at scala.Option.foreach(Option.scala:257)
+        at activator.cache.TemplateCacheActor.preStart(TemplateCacheActor.scala:163)
+        at akka.actor.Actor$class.aroundPreStart(Actor.scala:470)
+        at activator.cache.TemplateCacheActor.aroundPreStart(TemplateCacheActor.scala:25)
+        at akka.actor.ActorCell.create(ActorCell.scala:580)
+        at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+        at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+        at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\droid\.activator\1.3.10\templates\index.db_d39687bf9903f21.tmp' is a directory.
+        at scala.Predef$.require(Predef.scala:224)
+        at sbt.IO$.copyFile(IO.scala:637)
+        at sbt.IO$.move(IO.scala:839)
+        at activator.package$RichIO$.createViaTemporary$extension(package.scala:30)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:228)
+        at activator.templates.repository.UriRemoteTemplateRepository$$anonfun$resolveIndexTo$1.apply(UriRemoteTemplateRepository.scala:220)
+        at sbt.IO$.withTemporaryDirectory(IO.scala:344)
+        at activator.templates.repository.UriRemoteTemplateRepository.resolveIndexTo(UriRemoteTemplateRepository.scala:220)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:165)
+        at activator.cache.TemplateCacheActor$$anonfun$9.apply(TemplateCacheActor.scala:163)
+        at scala.Option.foreach(Option.scala:257)
+        at activator.cache.TemplateCacheActor.preStart(TemplateCacheActor.scala:163)
+        at akka.actor.Actor$class.aroundPreStart(Actor.scala:470)
+        at activator.cache.TemplateCacheActor.aroundPreStart(TemplateCacheActor.scala:25)
+        at akka.actor.ActorCell.create(ActorCell.scala:580)
+        at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:456)
+        at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+        at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:279)
+        at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+        at akka.dispatch.Mailbox.exec(Mailbox.scala:231)
+        at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+        at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+        at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+        at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+```
+
 On Ubuntu
 
 ```sh
