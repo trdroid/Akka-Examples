@@ -672,5 +672,6 @@ java.lang.IllegalArgumentException: requirement failed: Source file 'C:\Users\dr
 To avoid the above exception, I have done the following:
 
 * Granted "Full control" to typesafe-activator directory for authenticated users
-* Disabled Windows Firewall for Private Profile ONLY
+* Disabled Windows Firewall for Domain, Private and Public Profiles
 
+This seems to work very rarely. Not sure why it isn't working.
